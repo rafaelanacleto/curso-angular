@@ -1,6 +1,6 @@
 # ConceitosBasicos
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.4.
+Este projeto aborda conceitos básicos do Angular 19 e foi gerado usando [Angular CLI](https://github.com/angular/angular-cli) versão 19.2.4.
 
 ## Development server
 
