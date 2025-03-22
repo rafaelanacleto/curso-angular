@@ -1,0 +1,13 @@
+h1 {
+    color: red;
+    font-size: 2em;
+    text-align: center;
+}
+
+$font-stack: Helvetica, sans-serif;
+$primary-color: #1835c6;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
