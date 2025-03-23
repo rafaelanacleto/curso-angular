@@ -24,13 +24,35 @@
     width: 23%;
     padding: 10px;
     margin: 1%;
-    font-size: 18px;
+    font-size: 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     background-color: #007bff;
     color: #fff;
     cursor: pointer;
 }
 .calculator button:hover {
     background-color: #07488e;
+}
+
+.divDisplay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1px;
+}
+
+.oper {
+    width: 23%;
+    padding: 10px;
+    margin: 1%;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #a58312 !important;
+    color: #fff;
+    cursor: pointer;
+}
+.oper:hover {
+    background-color: #474105 !important;
 }
