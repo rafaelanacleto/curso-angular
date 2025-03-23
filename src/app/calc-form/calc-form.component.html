@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="form-box">
+        <form #frmCalc="ngForm" (ngSubmit)="calc(frmCalc.value)">
+            <h2>Calc-Form</h2>
+            <label for="num1">Numero 1: </label>
+            <input type="number" name="num1" id="num1" [(ngModel)]="num1">
+            &nbsp;
+            <label for="num2">Numero 2: </label>
+            <input type="number" name="num2" id="num2" [(ngModel)]="num2">
+
+            &nbsp;
+
+            <button type="submit">Somar</button>
+            <button type="button" (click)="clean()">Clean</button>
+        </form>
+
+        @if (result) {
+            <div class="result-display">
+                <p>Resultado: <span id="result">{{result}}</span></p> 
+            </div>
+        }
+
+    </div>
+</div>
