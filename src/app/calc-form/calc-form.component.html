@@ -14,9 +14,18 @@
             <button type="button" (click)="clean()">Clean</button>
         </form>
 
+        <div *ngIf="result > 20">
+             <p>Seu resultado está acima: de 20</p>   
+        </div>
+
+        <br>
         @if (result) {
             <div class="result-display">
                 <p>Resultado: <span id="result">{{result}}</span></p> 
+            </div>
+        } @else {
+            <div class="result-display">
+                <span>Seu resultado aparecera aqui!</span>
             </div>
         }
 
