@@ -6,7 +6,7 @@ import { ListaComprasComponent } from './lista-compras/lista-compras.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CalculadoraComponent, CalcFormComponent, ListaComprasComponent],
+  imports: [RouterOutlet, ListaComprasComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

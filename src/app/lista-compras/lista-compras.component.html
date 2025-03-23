@@ -1,19 +1,29 @@
-<div class="add-item">
-  <h1>Adicionar Item</h1>
-  <form [formGroup]="itemForm" (ngSubmit)="addItem()">
-    <div class="form-group">
-      <label for="produto">Produto</label>
-      <input type="text" id="produto" name="produto" formControlName="produto" required>
-
-      <label for="produto">Quantidade</label>
-      <input type="text" id="quantidade" name="quantidade" formControlName="quantidade" required>
-
-      <label for="produto">Preco</label>
-      <input type="text" id="preco" name="preco" formControlName="preco" required>
-
-      <button type="submit">Adicionar</button>
-    </div>
+<div class="card my-4">
+  <div class="card-header">
+    <h1 class="card-title">Gerenciar Itens</h1>
+  </div>
+  <div class="card-body">
+    <!-- Formulário de Adicionar Item -->
+    <form [formGroup]="itemForm" (ngSubmit)="addItem()">
+      <div class="form-group mb-3">
+        <label for="produto" class="form-label">Produto</label>
+        <input type="text" id="produto" name="produto" class="form-control" formControlName="produto" required>
+      </div>
+      <div class="form-group mb-3">
+        <label for="quantidade" class="form-label">Quantidade</label>
+        <input type="text" id="quantidade" name="quantidade" class="form-control" formControlName="quantidade" required>
+      </div>
+      <div class="form-group mb-3">
+        <label for="preco" class="form-label">Preço</label>
+        <input type="text" id="preco" name="preco" class="form-control" formControlName="preco" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Adicionar</button>
     </form>
+  </div>
+  <div class="card-footer">
+    <!-- Botão para Remover Item -->
+    <button class="btn btn-danger" disabled>Remover Item</button>
+  </div>
 </div>
 
 <div class="shopping-list-container">

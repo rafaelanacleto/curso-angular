@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-helloworld',
-  template: '<h1>Hello {{name}}!</h1>',
+  template: '<div class="container"><h1 class="text-center">Olá, Bootstrap 5!</h1><button class="btn btn-primary">Clique aqui</button></div>',
     styleUrl: './helloworld.components.scss'
 })
 export class HelloWorldComponent {
