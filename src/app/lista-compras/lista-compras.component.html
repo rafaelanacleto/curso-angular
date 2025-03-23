@@ -1,1 +1,41 @@
-<p>lista-compras works!</p>
+<div class="add-item">
+  <h1>Adicionar Item</h1>
+  <form [formGroup]="itemForm" (ngSubmit)="addItem()">
+    <div class="form-group">
+      <label for="produto">Produto</label>
+      <input type="text" id="produto" name="produto" formControlName="produto" required>
+
+      <label for="produto">Quantidade</label>
+      <input type="text" id="quantidade" name="quantidade" formControlName="quantidade" required>
+
+      <label for="produto">Preco</label>
+      <input type="text" id="preco" name="preco" formControlName="preco" required>
+
+      <button type="submit">Adicionar</button>
+    </div>
+    </form>
+</div>
+
+<div class="shopping-list-container">
+  <h1>Lista de Compras</h1>
+  <table class="shopping-list-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>ID</th>
+        <th>Produto</th>
+        <th>Quantidade</th>
+        <th>Preço</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items; let i = index;">
+        <td>{{i + 1}}</td>
+        <td>{{item.id}}</td>
+        <td>{{item.produto}}</td>
+        <td>{{item.quantidade}}</td>
+        <td>R$ {{item.preco}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
