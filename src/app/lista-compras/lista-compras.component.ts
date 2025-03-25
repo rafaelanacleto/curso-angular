@@ -1,23 +1,26 @@
-import { Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component, signal} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Item } from '../models/item.model';
 import { ItemsService } from '../services/items.service';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @Component({
   selector: 'app-lista-compras',
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, MatExpansionModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './lista-compras.component.html',
   standalone: true, //Declara que o componente é independente
   styleUrl: './lista-compras.component.scss'
 })
 export class ListaComprasComponent {
 
-  items: Item[] = []; //lista de itens
+  items: Item[] = []; //lista de itens inicia os item com array vazio
   itemForm: FormGroup;
+  readonly panelOpenState = signal(false);
 
   getItems() {
-    return this.items;  //retorna a lista de itens
+      return this.items;  //retorna a lista de itens
   }
 
   // //usado só em caso de listas muito grandes
@@ -40,7 +43,7 @@ export class ListaComprasComponent {
 
   addItem() {
     const item = this.itemForm.value;
-    console.log(item);
+   
     this.itemsService.addItems(new Item(this.items.length + 1, item.produto, item.quantidade, item.preco));
     this.items = this.itemsService.getItems();
     this.itemForm.reset();
