@@ -18,6 +18,8 @@ export class ListaComprasComponent {
   items: Item[] = []; //lista de itens inicia os item com array vazio
   itemForm: FormGroup;
   readonly panelOpenState = signal(false);
+  // Você pode ter uma propriedade no componente para controlar a classe
+  linhasSelecionadas: boolean[] = [];
 
   getItems() {
       return this.items;  //retorna a lista de itens
@@ -35,6 +37,8 @@ export class ListaComprasComponent {
       quantidade: 0,
       preco: 0
     });
+    // Inicialize o array linhasSelecionadas com o mesmo tamanho de items
+    this.linhasSelecionadas = this.items.map(() => false);
    }
 
   ngOnInit(): void {
@@ -44,9 +48,22 @@ export class ListaComprasComponent {
   addItem() {
     const item = this.itemForm.value;
    
-    this.itemsService.addItems(new Item(this.items.length + 1, item.produto, item.quantidade, item.preco));
+    this.itemsService.addItems(new Item(this.items.length + 1, item.produto, item.quantidade, item.preco, item.selecionado));
     this.items = this.itemsService.getItems();
     this.itemForm.reset();
+  }
+
+
+  onCheckboxChange(event: any, index: number) {
+    console.log('Checkbox no índice', index, 'mudou para:', event.target.checked);
+
+    // Atualize o estado do item específico no array 'items'
+    if (this.items[index]) {
+      this.items[index].selecionado = event.target.checked;
+    }
+
+    // Atualize o array que controla a classe CSS para a linha
+    this.linhasSelecionadas[index] = event.target.checked;
   }
 
 

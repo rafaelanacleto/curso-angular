@@ -46,14 +46,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of items; let i = index;">
+      <tr [ngClass]="{'tr-table': linhasSelecionadas[i]}" *ngFor="let item of items; let i = index;">
         <td>{{i + 1}}</td>
         <td>{{item.id}}</td>
         <td>{{item.produto}}</td>
         <td>{{item.quantidade}}</td>
         <td>R$ {{item.preco}}</td>
-        <td><input type="checkbox" name="" id=""></td>
-      </tr>
+        <td><input (change)="onCheckboxChange($event, i)" [checked]="item.selecionado" type="checkbox" name="" id=""></td>
+    </tr>
     </tbody>
   </table>
 </div>

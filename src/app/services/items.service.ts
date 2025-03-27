@@ -8,11 +8,9 @@ export class ItemsService {
   private items: Item[] = [];
 
   constructor() {
-    this.items.push(new Item(1, 'Pão', 1, 5));
-    this.items.push(new Item(2, 'Leite', 1, 3));
-    this.items.push(new Item(3, 'Café', 1, 10));
-    this.items.push(new Item(4, 'Arroz', 1, 6));
-    this.items.push(new Item(5, 'Feijão', 1, 5));
+    this.items.push(new Item(1, 'Pão', 1, 5, false));
+    this.items.push(new Item(2, 'Leite', 1, 3, false));
+    this.items.push(new Item(3, 'Café', 1, 10, false));
   }
 
   getItems() {
